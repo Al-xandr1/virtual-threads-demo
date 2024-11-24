@@ -1,4 +1,4 @@
-package org.example;
+package org.example.ex1;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -8,9 +8,10 @@ import java.util.concurrent.ThreadFactory;
 
 import static java.lang.Thread.sleep;
 
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 @Slf4j
-public class Example1 {
-
+public class Main {
     public static void main(String[] args) throws Exception {
 
         final ThreadFactory factory = Thread.ofVirtual().name("routine-", 0).factory();
@@ -41,7 +42,6 @@ public class Example1 {
             boilingWater.get();
         }
 
-
 //        try(ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor()) {
 //            executorService.execute(() -> System.out.println("Hello from virtual thread: " + Thread.currentThread().isVirtual()));
 //        }
@@ -49,6 +49,5 @@ public class Example1 {
 //        Thread thread = factory.newThread(() -> System.out.println(STR."Virtual thread from threadFactory = \{Thread.currentThread().isVirtual()}"));
 //        thread.start();
 //        thread.join();
-
     }
 }
