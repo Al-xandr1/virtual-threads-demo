@@ -1,4 +1,4 @@
-package org.example.exM;
+﻿package org.example.exM;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,7 +38,7 @@ public class EchoServer {
                             boolean isVirtual = ct.isVirtual();
                             String strRepresentation = ct.toString();
 
-                            System.out.printf("%d:%s:%s:%s  --  %s%n", id,  name, isVirtual, strRepresentation, inputLine);
+                            System.out.printf("id=%d:name=%s:virtual=%s:%s  --  %s%n", id,  name, isVirtual, strRepresentation, inputLine);
                             out.println(inputLine);
                         }
 

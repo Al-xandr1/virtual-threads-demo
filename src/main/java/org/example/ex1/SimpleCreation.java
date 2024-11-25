@@ -8,6 +8,7 @@ public class SimpleCreation {
         sample1();
         sample2();
         sample3();
+        sample4();
     }
 
     private static void sample1() throws InterruptedException {
@@ -39,5 +40,26 @@ public class SimpleCreation {
                         Thread.currentThread().getName()))
         );
         thread.join();
+    }
+
+    private static void sample4() throws InterruptedException {
+        Thread.Builder builder = Thread.ofVirtual().name("worker-", 0);
+
+        Runnable task =
+                () -> System.out.println(format("Thread: ID={0}, name={1}, isVirtual={2}, toString={3}",
+                        Thread.currentThread().threadId(),
+                        Thread.currentThread().getName(),
+                        Thread.currentThread().isVirtual(),
+                        Thread.currentThread().toString()));
+
+        // name "worker-0"
+        Thread t1 = builder.start(task);
+        t1.join();
+        System.out.println(format("{0} terminated", t1.getName()));
+
+        // name "worker-1"
+        Thread t2 = builder.start(task);
+        t2.join();
+        System.out.println(format("{0} terminated", t2.getName()));
     }
 }
