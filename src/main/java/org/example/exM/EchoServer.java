@@ -1,6 +1,4 @@
-package org.example.ex2;
-
-import org.springframework.core.task.VirtualThreadTaskExecutor;
+package org.example.exM;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -39,6 +37,7 @@ public class EchoServer {
                             String name = ct.getName();
                             boolean isVirtual = ct.isVirtual();
                             String strRepresentation = ct.toString();
+
                             System.out.printf("%d:%s:%s:%s  --  %s%n", id,  name, isVirtual, strRepresentation, inputLine);
                             out.println(inputLine);
                         }
