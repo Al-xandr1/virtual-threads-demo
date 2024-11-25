@@ -1,4 +1,4 @@
-﻿package org.example.exM;
+package org.example.ex2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,9 +23,13 @@ public class EchoServer {
                 // Accept incoming connections
                 Socket clientSocket = serverSocket.accept();
 
-                // Start a service thread
-                Thread.Builder.OfVirtual ofVirtual = Thread.ofVirtual();
-                Thread vt = ofVirtual.start(() -> {
+                Thread.Builder builder =
+                        // lesson Start a service PLATFORM thread
+                         Thread.ofPlatform();
+                        // lesson Start a service VIRTUAL thread
+//                        Thread.ofVirtual();
+
+                Thread vt = builder.unstarted(() -> {
                     try (
                             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
                             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
@@ -38,7 +42,7 @@ public class EchoServer {
                             boolean isVirtual = ct.isVirtual();
                             String strRepresentation = ct.toString();
 
-                            System.out.printf("id=%d:name=%s:virtual=%s:%s  --  %s%n", id,  name, isVirtual, strRepresentation, inputLine);
+                            System.out.printf("id=%d:name=%s:virtual=%s:%s  --  %s%n", id, name, isVirtual, strRepresentation, inputLine);
                             out.println(inputLine);
                         }
 
@@ -46,6 +50,8 @@ public class EchoServer {
                         e.printStackTrace();
                     }
                 });
+                vt.setName("EchoServer");
+                vt.start();
             }
 
         } catch (IOException e) {

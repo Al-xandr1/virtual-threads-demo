@@ -1,4 +1,4 @@
-package org.example.ex2;
+package org.example.ex3;
 
 public class BundledCreation {
 

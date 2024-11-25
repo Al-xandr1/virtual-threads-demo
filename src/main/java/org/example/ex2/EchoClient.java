@@ -1,4 +1,4 @@
-package org.example.exM;
+package org.example.ex2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
