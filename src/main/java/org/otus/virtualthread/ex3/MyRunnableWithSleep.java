@@ -1,6 +1,6 @@
-package org.otus.virtualopenlesso.ex3;
+package org.otus.virtualthread.ex3;
 
-import static org.otus.virtualopenlesso.ex3.BatchCreation.CAPACITY;
+import static org.otus.virtualthread.ex3.BatchCreation.CAPACITY;
 
 public class MyRunnableWithSleep implements Runnable {
 

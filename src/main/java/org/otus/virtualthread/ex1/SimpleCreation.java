@@ -1,4 +1,4 @@
-package org.otus.virtualopenlesso.ex1;
+package org.otus.virtualthread.ex1;
 
 import static java.text.MessageFormat.format;
 

@@ -1,4 +1,4 @@
-package org.otus.virtualopenlesso.ex3;
+package org.otus.virtualthread.ex3;
 
 import java.util.concurrent.ThreadFactory;
 

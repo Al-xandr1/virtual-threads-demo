@@ -1,4 +1,4 @@
-package org.otus.virtualopenlesso.ex2;
+package org.otus.virtualthread.ex2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
