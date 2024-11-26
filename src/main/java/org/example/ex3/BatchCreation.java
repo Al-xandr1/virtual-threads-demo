@@ -4,9 +4,9 @@ import java.util.concurrent.ThreadFactory;
 
 public class BatchCreation {
 
-//    public static final int THEAD_COUNT = 10; // lesson 1
+    //    public static final int THEAD_COUNT = 10; // lesson 1
 //    public static final int THEAD_COUNT = 1_000_000; // lesson 2    For heap dump & further analyzing
-    public static final int THEAD_COUNT = 5_000; // lesson 3   For VisualVM
+    public static final int THEAD_COUNT = 100; // lesson 3   For VisualVM
 
     public static final int CAPACITY = 1;
 
@@ -39,26 +39,27 @@ public class BatchCreation {
     private static void startThreads(Thread.Builder builder) throws InterruptedException {
         ThreadFactory factory = builder.factory();
 
-        Runnable waitTask = () -> {
-//            try {
-            long[] value = new long[CAPACITY];
-            while (true) {
-                for (int i = 0; i < 10_000; i++) {
-                    value[0] += i * i;
-                }
-//                    Thread.sleep(1);
-                accept(value);
-            }
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
+        Runnable task = new MyOtusRunnable();
+//        Runnable task = () -> {
+////            try {
+//            long[] value = new long[CAPACITY];
+//            while (true) {
+//                for (int i = 0; i < 10_000; i++) {
+//                    value[0] += i * i;
+//                }
+////                    Thread.sleep(1);
+//                accept(value);
 //            }
-        };
+////            } catch (InterruptedException e) {
+////                throw new RuntimeException(e);
+////            }
+//        };
 
         Thread last = null;
         for (int i = 0; i < THEAD_COUNT; i++) {
-            last = factory.newThread(waitTask);
+            last = factory.newThread(task);
             last.start();
-            if (i % 1000 == 0) {
+            if (i % 10 == 0) {
                 System.out.println("Thread " + last.threadId() + "  started (virtual=" + last.isVirtual() + " )");
             }
         }
