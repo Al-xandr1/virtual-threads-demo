@@ -1,4 +1,4 @@
-package org.example.ex3;
+package org.otus.virtualopenlesso.ex3;
 
 import java.util.concurrent.ThreadFactory;
 
@@ -39,20 +39,15 @@ public class BatchCreation {
     private static void startThreads(Thread.Builder builder) throws InterruptedException {
         ThreadFactory factory = builder.factory();
 
-        Runnable task = new MyOtusRunnable();
+        Runnable task = new MyRunnableWithSleep();
 //        Runnable task = () -> {
-////            try {
 //            long[] value = new long[CAPACITY];
 //            while (true) {
 //                for (int i = 0; i < 10_000; i++) {
 //                    value[0] += i * i;
 //                }
-////                    Thread.sleep(1);
 //                accept(value);
 //            }
-////            } catch (InterruptedException e) {
-////                throw new RuntimeException(e);
-////            }
 //        };
 
         Thread last = null;

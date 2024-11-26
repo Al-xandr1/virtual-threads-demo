@@ -1,4 +1,4 @@
-package org.example.ex2;
+package org.otus.virtualopenlesso.ex2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
