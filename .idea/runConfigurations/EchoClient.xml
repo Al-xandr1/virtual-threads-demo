@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="EchoClient" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="org.example.exM.EchoClient" />
+    <option name="MAIN_CLASS_NAME" value="org.example.ex2.EchoClient" />
     <module name="virtual-threads-demo.main" />
     <option name="PROGRAM_PARAMETERS" value="localhost 50500" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="org.example.exM.*" />
+        <option name="PATTERN" value="org.example.ex2.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
