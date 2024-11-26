@@ -4,14 +4,24 @@ import java.util.concurrent.ThreadFactory;
 
 public class BatchCreation {
 
-    //    public static final int THEAD_COUNT = 10; // lesson 1
-    public static final int THEAD_COUNT = 1_000_000; // lesson 2
+//    public static final int THEAD_COUNT = 10; // lesson 1
+//    public static final int THEAD_COUNT = 1_000_000; // lesson 2    For heap dump & further analyzing
+    public static final int THEAD_COUNT = 5_000; // lesson 3   For VisualVM
 
     public static final int CAPACITY = 1;
 
     public static void main(String[] args) throws InterruptedException {
-//        startPlatform();
-        startVirtual();
+        if (args.length != 1) {
+            System.err.println("Usage: java BatchCreation <isVirtual>");
+            System.exit(1);
+        }
+
+        boolean isVirtual = Boolean.parseBoolean(args[0]);
+        if (isVirtual) {
+            startVirtual();
+        } else {
+            startPlatform();
+        }
     }
 
     private static void startPlatform() throws InterruptedException {
