@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SimpleCreation" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="org.example.ex1.SimpleCreation" />
+  <configuration default="false" name="SimpleCreation" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="org.otus.virtualthread.ex1.SimpleCreation" />
     <module name="virtual-threads-demo.main" />
     <extension name="coverage">
       <pattern>

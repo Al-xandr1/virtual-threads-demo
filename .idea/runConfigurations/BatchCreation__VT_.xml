@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="BatchCreation (VT)" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="org.example.ex3.BatchCreation" />
+    <option name="MAIN_CLASS_NAME" value="org.otus.virtualthread.ex3.BatchCreation" />
     <module name="virtual-threads-demo.main" />
     <option name="PROGRAM_PARAMETERS" value="true" />
     <option name="VM_PARAMETERS" value="-Xss10m" />
